@@ -1,0 +1,18 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: ems-api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: ems-department-service
+          uri: lb://ems-department-service
+          predicates:
+            - Path=/dept-svc/**
+
+        - id: ems-employee-service
+          uri: lb://ems-employee-service
+          predicates:
+            - Path=/employee-svc/**
