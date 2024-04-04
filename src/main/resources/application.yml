@@ -22,6 +22,7 @@ spring:
               allowedMethods:
                 - GET
                 - POST
+                - PUT
               allowedHeaders:
                 - Access-Control-Allow-Origin
                 - content-type
