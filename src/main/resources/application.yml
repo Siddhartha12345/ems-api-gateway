@@ -23,6 +23,7 @@ spring:
                 - GET
                 - POST
                 - PUT
+                - DELETE
               allowedHeaders:
                 - Access-Control-Allow-Origin
                 - content-type
