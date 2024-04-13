@@ -11,6 +11,18 @@ spring:
           uri: lb://ems-department-service
           predicates:
             - Path=/dept-svc/**
+          metadata:
+            cors:
+              allowedOrigins: 'http://localhost:4200'
+              allowedMethods:
+                - GET
+                - POST
+                - PUT
+                - DELETE
+              allowedHeaders:
+                - Access-Control-Allow-Origin
+                - content-type
+              maxAge: 30
 
         - id: ems-employee-service
           uri: lb://ems-employee-service
