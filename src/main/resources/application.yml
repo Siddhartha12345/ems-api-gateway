@@ -22,6 +22,7 @@ spring:
               allowedHeaders:
                 - Access-Control-Allow-Origin
                 - content-type
+                - Authorization
               maxAge: 30
 
         - id: ems-employee-service
@@ -39,4 +40,21 @@ spring:
               allowedHeaders:
                 - Access-Control-Allow-Origin
                 - content-type
+                - Authorization
+              maxAge: 30
+
+        - id: ems-user-service
+          uri: lb://ems-user-service
+          predicates:
+            - Path=/user-svc/**
+          metadata:
+            cors:
+              allowedOrigins: 'http://localhost:4200'
+              allowedMethods:
+                - GET
+                - POST
+              allowedHeaders:
+                - Access-Control-Allow-Origin
+                - content-type
+                - Authorization
               maxAge: 30
